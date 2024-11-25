@@ -1,0 +1,22 @@
+@model RepositoryPattern.WebUi.Models.Item
+
+@{
+    ViewData["Title"] = "Item Details";
+}
+
+<div class="container mt-4">
+    <h1 class="text-center">Item Details</h1>
+
+    <dl class="row">
+        <dt class="col-sm-3">Id</dt>
+        <dd class="col-sm-9">@Model.Id</dd>
+
+        <dt class="col-sm-3">Name</dt>
+        <dd class="col-sm-9">@Model.Name</dd>
+
+        <dt class="col-sm-3">Description</dt>
+        <dd class="col-sm-9">@Model.Description</dd>
+    </dl>
+
+    <a class="btn btn-secondary" asp-action="Index">Back to List</a>
+</div>

@@ -17,15 +17,17 @@ namespace RepositoryPattern.WebUi.Controllers
             _repository = repository;
         }
 
+        [HttpGet("index")]
         public async Task<IActionResult> Index()
         {
             var items = await _repository.GetAllAsync();
             return View(items);
         }
 
+        [HttpGet("create")]
         public IActionResult Create() => View();
 
-        [HttpPost]
+        [HttpPost("create")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Item item)
         {

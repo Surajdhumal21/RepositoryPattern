@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using RepositoryPattern.WebUi.Data;
+using RepositoryPattern.WebUi.Repositories;
+using RepositoryPattern.WebUi.Repositories.Interfaces;
 
 namespace RepositoryPattern.WebUi;
 
@@ -13,6 +15,9 @@ public class Program
         builder.Services.AddControllersWithViews();
         builder.Services.AddDbContext<ApplicationDbContext>(objects =>
             objects.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+        // Register repository and its implementation
+        builder.Services.AddScoped<IItemRepository, ItemRepository>();
 
         var app = builder.Build();
 

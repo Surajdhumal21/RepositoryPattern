@@ -10,12 +10,7 @@ namespace RepositoryPattern.WebAPI.Controllers
         [HttpGet]
         public IActionResult GetProduct()
         {
-            return Ok(new Product
-            {
-                ProductId = 10,
-                ProductName = "Brush",
-                ProdutPrice = 50
-            });
+            return Ok("Hello World");
         }
     }
 }
